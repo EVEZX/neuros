@@ -1,0 +1,12 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "features": {},
+  "postCreateCommand": "pip install -q aiohttp numpy scipy",
+  "postStartCommand": "bash start-evez.sh &",
+  "forwardPorts": [9100, 9800, 9700],
+  "portsAttributes": {
+    "9100": {"label": "EVEZ Provider", "onAutoForward": "notify"},
+    "9800": {"label": "EVEZ Arena", "onAutoForward": "openBrowser"},
+    "9700": {"label": "EVEZ Commerce", "onAutoForward": "notify"}
+  }
+}
